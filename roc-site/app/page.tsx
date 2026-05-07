@@ -6,6 +6,7 @@ import WhatWeBuy from "@/components/WhatWeBuy";
 import Process from "@/components/Process";
 import WhyROC from "@/components/WhyROC";
 import SellWizard from "@/components/SellWizard";
+import PhotoStrip from "@/components/PhotoStrip";
 import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -21,6 +22,7 @@ export default function Home() {
       <Process />
       <WhyROC />
       <SellWizard />
+      <PhotoStrip />
       <Testimonials />
       <Footer />
     </ScrollReveal>
