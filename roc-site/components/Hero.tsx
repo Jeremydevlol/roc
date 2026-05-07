@@ -1,58 +1,157 @@
 export default function Hero() {
   return (
-    <section className="relative grid grid-cols-1 lg:grid-cols-2 min-h-screen bg-[#0A0A0A] pt-[70px]">
-      {/* LEFT */}
-      <div className="flex flex-col justify-center px-8 md:px-16 py-20 bg-[#0A0A0A] relative z-10">
-        <div className="flex items-center gap-4 mb-8">
-          <div className="w-8 h-px bg-[#C9A84C]" />
-          <span className="text-[10px] font-semibold tracking-[4px] uppercase text-[#C9A84C]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+    <section className="relative w-full overflow-hidden" style={{ height: "100svh", minHeight: 600 }}>
+      {/* VIDEO BACKGROUND */}
+      <video
+        autoPlay muted loop playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{ objectPosition: "center center" }}
+      >
+        <source src="/hero.mp4" type="video/mp4" />
+      </video>
+
+      {/* DARK OVERLAY */}
+      <div
+        className="absolute inset-0"
+        style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.52) 0%, rgba(0,0,0,0.42) 50%, rgba(0,0,0,0.75) 100%)" }}
+      />
+
+      {/* CONTENT — centered over video */}
+      <div
+        className="absolute inset-0 flex flex-col items-center justify-center text-center px-6"
+        style={{ paddingTop: 70 }}
+      >
+        {/* eyebrow */}
+        <div className="flex items-center gap-3 mb-7">
+          <div className="w-8 h-px" style={{ background: "#C9A84C" }} />
+          <span
+            style={{
+              fontFamily: "'Montserrat', sans-serif",
+              fontSize: 10,
+              fontWeight: 600,
+              letterSpacing: "4px",
+              textTransform: "uppercase",
+              color: "#C9A84C",
+            }}
+          >
             Trusted Jewelry Buyers · Miami, FL
           </span>
+          <div className="w-8 h-px" style={{ background: "#C9A84C" }} />
         </div>
-        <h1 className="text-[clamp(44px,6vw,82px)] font-black leading-[1.0] tracking-[-1px] mb-6 uppercase" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
+
+        {/* headline */}
+        <h1
+          className="font-black uppercase leading-[1.0] tracking-[-1px] mb-5"
+          style={{
+            fontFamily: "'Playfair Display', Georgia, serif",
+            fontSize: "clamp(54px, 11vw, 120px)",
+          }}
+        >
           <span className="block text-white">We Buy</span>
-          <span className="block text-[#C9A84C]">Fine Jewelry</span>
-          <span className="block text-white/70 text-[clamp(18px,2.2vw,28px)] font-bold tracking-[3px] mt-2">At The Highest Price</span>
+          <span style={{ color: "#C9A84C" }}>Fine Jewelry</span>
         </h1>
-        <p className="text-[13px] font-light leading-[1.9] text-white/50 max-w-[440px] mb-10" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+
+        {/* sub-headline */}
+        <p
+          className="font-light leading-[1.9] mb-10"
+          style={{
+            fontFamily: "'Montserrat', sans-serif",
+            fontSize: "clamp(13px, 1.4vw, 16px)",
+            color: "rgba(255,255,255,0.60)",
+            maxWidth: 460,
+          }}
+        >
           We buy diamonds, gold, designer jewelry &amp; estate collections.<br />
-          <strong className="text-white font-semibold">Instant payment. 100% confidential.</strong>
+          <strong style={{ color: "#fff", fontWeight: 600 }}>Instant payment. 100% confidential.</strong>
         </p>
-        <div className="flex flex-wrap gap-4 mb-12">
-          <a href="#sell" className="text-[11px] font-bold tracking-[2.5px] uppercase bg-[#C9A84C] text-black px-10 py-5 hover:bg-[#D4AF5A] hover:-translate-y-px transition-all duration-300 shadow-xl shadow-[#C9A84C]/20" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+
+        {/* CTAs */}
+        <div className="flex flex-wrap justify-center gap-4 mb-14">
+          <a
+            href="#sell"
+            className="hover:-translate-y-px transition-all duration-300"
+            style={{
+              fontFamily: "'Montserrat', sans-serif",
+              fontSize: 11,
+              fontWeight: 700,
+              letterSpacing: "2.5px",
+              textTransform: "uppercase",
+              background: "#C9A84C",
+              color: "#000",
+              padding: "18px 40px",
+              boxShadow: "0 14px 44px rgba(201,168,76,0.30)",
+              display: "inline-block",
+              textDecoration: "none",
+            }}
+          >
             Get My Free Offer →
           </a>
-          <a href="#process" className="text-[11px] font-semibold tracking-[2.5px] uppercase border border-[#C9A84C]/40 text-[#C9A84C] px-10 py-5 hover:border-[#C9A84C] hover:bg-[#C9A84C]/8 transition-all duration-300" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+          <a
+            href="#process"
+            className="transition-all duration-300"
+            style={{
+              fontFamily: "'Montserrat', sans-serif",
+              fontSize: 11,
+              fontWeight: 600,
+              letterSpacing: "2.5px",
+              textTransform: "uppercase",
+              border: "1px solid rgba(201,168,76,0.45)",
+              color: "#C9A84C",
+              padding: "18px 40px",
+              display: "inline-block",
+              textDecoration: "none",
+            }}
+          >
             How It Works
           </a>
         </div>
-        <div className="hidden md:grid grid-cols-3 gap-4 border-t border-white/8 pt-8">
+
+        {/* stats bar */}
+        <div
+          className="grid grid-cols-3 gap-8 pt-8"
+          style={{
+            borderTop: "1px solid rgba(255,255,255,0.10)",
+            maxWidth: 480,
+            width: "100%",
+          }}
+        >
           {[
             { num: "GIA", label: "Certified Experts" },
-            { num: "Same Day", label: "Offers Guaranteed" },
+            { num: "Same Day", label: "Offers" },
             { num: "100%", label: "Confidential" },
           ].map((s) => (
-            <div key={s.label}>
-              <span className="block text-[26px] font-light text-[#C9A84C] leading-none mb-1" style={{ fontFamily: "'Playfair Display', serif" }}>{s.num}</span>
-              <span className="text-[10px] tracking-[2px] uppercase text-white/40" style={{ fontFamily: "'Montserrat', sans-serif" }}>{s.label}</span>
+            <div key={s.label} className="text-center">
+              <span
+                className="block font-light leading-none mb-1"
+                style={{
+                  fontFamily: "'Playfair Display', serif",
+                  fontSize: "clamp(17px, 2.4vw, 26px)",
+                  color: "#C9A84C",
+                }}
+              >
+                {s.num}
+              </span>
+              <span
+                style={{
+                  fontFamily: "'Montserrat', sans-serif",
+                  fontSize: 10,
+                  letterSpacing: "2px",
+                  textTransform: "uppercase",
+                  color: "rgba(255,255,255,0.38)",
+                }}
+              >
+                {s.label}
+              </span>
             </div>
           ))}
         </div>
       </div>
 
-      {/* RIGHT — video hero */}
-      <div className="relative overflow-hidden min-h-[300px] lg:min-h-full order-first lg:order-last">
-        <video
-          autoPlay muted loop playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="/hero.mp4" type="video/mp4" />
-        </video>
-        {/* gradient overlay left side */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0A] via-[#0A0A0A]/30 to-transparent lg:block hidden" />
-        {/* gradient overlay bottom for mobile */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent lg:hidden" />
-      </div>
+      {/* bottom fade into page bg */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-28"
+        style={{ background: "linear-gradient(to bottom, transparent, #0A0A0A)" }}
+      />
     </section>
   );
 }

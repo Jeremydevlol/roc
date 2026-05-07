@@ -1,7 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
-import TrustBar from "@/components/TrustBar";
 import BrandMarquee from "@/components/BrandMarquee";
 import WhatWeBuy from "@/components/WhatWeBuy";
 import Process from "@/components/Process";
@@ -18,7 +17,6 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Marquee />
-      <TrustBar />
       <BrandMarquee />
       <WhatWeBuy />
       <Process />
