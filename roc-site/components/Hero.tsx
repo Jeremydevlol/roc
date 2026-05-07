@@ -32,6 +32,7 @@ export default function Hero() {
               letterSpacing: "4px",
               textTransform: "uppercase",
               color: "#C9A84C",
+              textShadow: "0 1px 6px rgba(0,0,0,0.9)",
             }}
           >
             Trusted Jewelry Buyers · Miami, FL
@@ -47,8 +48,20 @@ export default function Hero() {
             fontSize: "clamp(54px, 11vw, 120px)",
           }}
         >
-          <span className="block text-white">We Buy</span>
-          <span style={{ color: "#C9A84C" }}>Fine Jewelry</span>
+          <span
+            className="block text-white"
+            style={{ textShadow: "0 2px 4px rgba(0,0,0,0.9), 0 4px 24px rgba(0,0,0,0.7), 2px 2px 0px rgba(0,0,0,0.5)" }}
+          >
+            We Buy
+          </span>
+          <span
+            style={{
+              color: "#C9A84C",
+              textShadow: "0 2px 4px rgba(0,0,0,0.95), 0 4px 24px rgba(0,0,0,0.75), 2px 2px 0px rgba(0,0,0,0.6)",
+            }}
+          >
+            Fine Jewelry
+          </span>
         </h1>
 
         {/* sub-headline */}
@@ -57,8 +70,9 @@ export default function Hero() {
           style={{
             fontFamily: "'Montserrat', sans-serif",
             fontSize: "clamp(13px, 1.4vw, 16px)",
-            color: "rgba(255,255,255,0.60)",
+            color: "rgba(255,255,255,0.75)",
             maxWidth: 460,
+            textShadow: "0 1px 8px rgba(0,0,0,0.9), 0 2px 16px rgba(0,0,0,0.7)",
           }}
         >
           We buy diamonds, gold, designer jewelry &amp; estate collections.<br />
@@ -127,6 +141,7 @@ export default function Hero() {
                   fontFamily: "'Playfair Display', serif",
                   fontSize: "clamp(17px, 2.4vw, 26px)",
                   color: "#C9A84C",
+                  textShadow: "0 2px 8px rgba(0,0,0,0.9)",
                 }}
               >
                 {s.num}
@@ -137,7 +152,8 @@ export default function Hero() {
                   fontSize: 10,
                   letterSpacing: "2px",
                   textTransform: "uppercase",
-                  color: "rgba(255,255,255,0.38)",
+                  color: "rgba(255,255,255,0.55)",
+                  textShadow: "0 1px 6px rgba(0,0,0,0.9)",
                 }}
               >
                 {s.label}
