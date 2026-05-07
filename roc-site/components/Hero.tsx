@@ -82,7 +82,7 @@ export default function Hero() {
         {/* CTAs */}
         <div className="flex flex-wrap justify-center gap-4 mb-14">
           <a
-            href="#sell"
+            href="/offer"
             className="hover:-translate-y-px transition-all duration-300"
             style={{
               fontFamily: "'Montserrat', sans-serif",
