@@ -270,11 +270,23 @@ img{display:block;max-width:100%}
 .wiz-submit-btn{width:100%;margin-top:6px;padding:15px}
 .wiz-next-btn:disabled,.wiz-submit-btn:disabled{opacity:.3;cursor:not-allowed}
 /* Success */
-.wiz-success{padding:40px 28px;text-align:center}
-.wiz-success-ring{width:64px;height:64px;border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;border-radius:50%}
-.wiz-success h3{font-family:var(--serif);font-size:32px;font-weight:900;text-transform:uppercase;color:#fff;margin-bottom:10px}
+.wiz-success{padding:36px 28px;text-align:center}
+.wiz-success-ring{width:56px;height:56px;border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;border-radius:50%}
+.wiz-success h3{font-family:var(--serif);font-size:28px;font-weight:900;text-transform:uppercase;color:#fff;margin-bottom:8px}
 .wiz-success h3 em{font-style:normal;color:var(--gold)}
-.wiz-success p{font-size:12px;font-weight:300;color:rgba(255,255,255,.45);max-width:300px;margin:0 auto 28px;line-height:1.8}
+.wiz-success>p{font-size:12px;font-weight:300;color:rgba(255,255,255,.45);max-width:320px;margin:0 auto 20px;line-height:1.8}
+/* context summary */
+.wiz-ctx-summary{background:rgba(255,255,255,.03);border:1px solid rgba(201,168,76,.15);padding:16px 20px;margin:0 auto 22px;text-align:left;max-width:340px}
+.wiz-ctx-row{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.wiz-ctx-row:last-child{border-bottom:none}
+.wiz-ctx-lbl{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.35);font-family:var(--sans)}
+.wiz-ctx-val{font-size:11px;font-weight:500;color:#fff;font-family:var(--sans);text-align:right;max-width:55%}
+/* CTA row */
+.wiz-cta-row{display:flex;flex-direction:column;gap:10px;max-width:320px;margin:0 auto}
+.wiz-call-btn{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--gold);color:#000;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:16px 24px;text-decoration:none;font-family:var(--sans);transition:background .25s,transform .2s}
+.wiz-call-btn:hover{background:#D4AF5A;transform:translateY(-1px)}
+.wiz-wa-btn{display:flex;align-items:center;justify-content:center;gap:10px;background:#25D366;color:#fff;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:15px 24px;text-decoration:none;font-family:var(--sans);transition:background .25s,transform .2s}
+.wiz-wa-btn:hover{background:#20bc5a;transform:translateY(-1px)}
 .wiz-success-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .wiz-suc-badge{padding:14px 10px;border:1px solid var(--border);text-align:center}
 .wiz-suc-badge .icon{color:var(--gold);font-size:18px;margin-bottom:6px}
@@ -467,7 +479,9 @@ hambBtn.addEventListener('click',()=>{hambBtn.classList.toggle('open');mobileMen
   </div>
   <div class="hero-right">
     <div class="hero-img-ph" style="width:100%;height:100%;min-height:600px">
-      <img src="adsasdw.png" alt="Fine jewelry collection — diamonds, gold & estate pieces"/>
+      <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block">
+        <source src="hazlo_en_movimiento_que_se_mue_Kling_30__54249.mp4" type="video/mp4"/>
+      </video>
     </div>
     <div class="hero-img-ph overlay"></div>
   </div>
@@ -526,6 +540,46 @@ hambBtn.addEventListener('click',()=>{hambBtn.classList.toggle('open');mobileMen
     </div>
   </div>
 </section>
+
+<!-- ════════════ BRAND MARQUEE ════════════ -->
+<style>
+.brands-strip{background:#0D0D0D;border-top:1px solid rgba(201,168,76,.12);border-bottom:1px solid rgba(201,168,76,.12);overflow:hidden;padding:28px 0}
+.brands-label{text-align:center;font-size:9px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.2);font-family:var(--sans);margin-bottom:20px}
+.brands-track-wrap{overflow:hidden;position:relative}
+.brands-track-wrap::before,.brands-track-wrap::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
+.brands-track-wrap::before{left:0;background:linear-gradient(to right,#0D0D0D,transparent)}
+.brands-track-wrap::after{right:0;background:linear-gradient(to left,#0D0D0D,transparent)}
+.brands-track{display:flex;align-items:center;gap:64px;animation:brandScroll 28s linear infinite;width:max-content}
+.brands-track:hover{animation-play-state:paused}
+@keyframes brandScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.brand-logo{flex-shrink:0;display:flex;align-items:center;justify-content:center;height:40px;opacity:.45;transition:opacity .3s;filter:brightness(0) invert(1)}
+.brand-logo:hover{opacity:.9}
+.brand-logo img{height:100%;width:auto;max-width:120px;object-fit:contain;display:block}
+/* AP logo is already white on black — don't invert */
+.brand-logo.ap-logo{filter:grayscale(1) brightness(1.8)}
+</style>
+<div class="brands-strip">
+  <div class="brands-label">We Pay Top Dollar For These Luxury Brands</div>
+  <div class="brands-track-wrap">
+    <div class="brands-track">
+      <!-- set 1 -->
+      <div class="brand-logo"><img src="Logo_da_Rolex.png" alt="Rolex"/></div>
+      <div class="brand-logo"><img src="Cartier_logo.svg.png" alt="Cartier"/></div>
+      <div class="brand-logo"><img src="Vacheron-Constantin-Logo.png" alt="Vacheron Constantin"/></div>
+      <div class="brand-logo ap-logo"><img src="audemars_piguet_logo.jpg" alt="Audemars Piguet"/></div>
+      <div class="brand-logo"><img src="0d338744ebf81a4c510ffe63db7a7759252dd42a0843_url.webp" alt="Van Cleef & Arpels"/></div>
+      <!-- divider dots -->
+      <span style="color:rgba(201,168,76,.3);font-size:18px;flex-shrink:0">◆</span>
+      <!-- set 2 (duplicate for seamless loop) -->
+      <div class="brand-logo"><img src="Logo_da_Rolex.png" alt="Rolex"/></div>
+      <div class="brand-logo"><img src="Cartier_logo.svg.png" alt="Cartier"/></div>
+      <div class="brand-logo"><img src="Vacheron-Constantin-Logo.png" alt="Vacheron Constantin"/></div>
+      <div class="brand-logo ap-logo"><img src="audemars_piguet_logo.jpg" alt="Audemars Piguet"/></div>
+      <div class="brand-logo"><img src="0d338744ebf81a4c510ffe63db7a7759252dd42a0843_url.webp" alt="Van Cleef & Arpels"/></div>
+      <span style="color:rgba(201,168,76,.3);font-size:18px;flex-shrink:0">◆</span>
+    </div>
+  </div>
+</div>
 
 <!-- ════════════ WHAT WE BUY ════════════ -->
 <section class="section" id="what-we-buy" style="background:var(--black);padding-bottom:0">
@@ -933,15 +987,56 @@ function render(){
   const s=cur();
   const box=document.getElementById('wizBox');
   if(s.type==='success'){
+    /* ── build context summary ── */
+    const situationMap={widow:'Widow / Widower',executor:'Estate Executor',divorce:'Divorce Settlement',inherited:'Inherited Jewelry',downsizing:'Downsizing',collection:'Selling a Collection'};
+    const catMap={diamonds:'Diamond Jewelry',gold:'Gold & Platinum',watches:'Luxury Watches',designer:'Designer Jewelry',antique:'Antique & Vintage',estate:'Full Estate Collection'};
+    const timelineMap={asap:'As Soon As Possible',  '1_3m':'Within 1–3 Months',exp:'Just Exploring'};
+    const valueMap={u2500:'Under $2,500','2500_10k':'$2,500–$10,000','10_50k':'$10,000–$50,000','50kp':'$50,000+',ns:'Not Sure'};
+
+    const firstName = contact.fn || 'there';
+    const situation = situationMap[ans.situation] || '';
+    const cats = (ans.cat||[]).map(v=>catMap[v]).filter(Boolean);
+    const timeline = timelineMap[ans.timeline] || '';
+    const value = valueMap[ans.value] || '';
+
+    /* WhatsApp pre-filled message */
+    const waLines = [
+      `Hi, my name is ${contact.fn||''} ${contact.ln||''}.`,
+      situation ? `Situation: ${situation}.` : '',
+      cats.length ? `I want to sell: ${cats.join(', ')}.` : '',
+      value ? `Estimated value: ${value}.` : '',
+      timeline ? `Timeline: ${timeline}.` : '',
+      contact.em ? `Email: ${contact.em}` : '',
+    ].filter(Boolean).join(' ');
+    const waUrl = `https://wa.me/13053505059?text=${encodeURIComponent(waLines)}`;
+
+    /* summary rows */
+    const rows = [
+      situation ? `<div class="wiz-ctx-row"><span class="wiz-ctx-lbl">Situation</span><span class="wiz-ctx-val">${situation}</span></div>` : '',
+      cats.length ? `<div class="wiz-ctx-row"><span class="wiz-ctx-lbl">Selling</span><span class="wiz-ctx-val">${cats.join(', ')}</span></div>` : '',
+      value ? `<div class="wiz-ctx-row"><span class="wiz-ctx-lbl">Est. Value</span><span class="wiz-ctx-val">${value}</span></div>` : '',
+      timeline ? `<div class="wiz-ctx-row"><span class="wiz-ctx-lbl">Timeline</span><span class="wiz-ctx-val">${timeline}</span></div>` : '',
+      (contact.fn||contact.ln) ? `<div class="wiz-ctx-row"><span class="wiz-ctx-lbl">Name</span><span class="wiz-ctx-val">${contact.fn||''} ${contact.ln||''}</span></div>` : '',
+    ].filter(Boolean).join('');
+
     box.innerHTML=`<div class="wiz-success">
       <div class="wiz-success-ring"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><polyline points="5,14 11,20 23,8" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      <h3>Request <em>Received!</em></h3>
-      <p>Our estate jewelry specialist will contact you within 1 business hour to confirm your appointment.</p>
-      <div class="wiz-success-grid">
-        <div class="wiz-suc-badge"><div class="icon">◆</div><span>Expert evaluation prepared</span></div>
-        <div class="wiz-suc-badge"><div class="icon">⚡</div><span>Confirmed within 1 hour</span></div>
-        <div class="wiz-suc-badge"><div class="icon">🔒</div><span>100% confidential</span></div>
+      <h3>Ready, <em>${firstName}!</em></h3>
+      <p>Our specialist has your details and is ready to give you the best offer. <strong style="color:#fff">Call or message us now</strong> to connect immediately.</p>
+
+      <div class="wiz-ctx-summary">${rows}</div>
+
+      <div class="wiz-cta-row">
+        <a href="tel:3053505059" class="wiz-call-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.83a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call Now — 305-350-5059
+        </a>
+        <a href="${waUrl}" target="_blank" class="wiz-wa-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+          WhatsApp Us
+        </a>
       </div>
+      <p style="font-size:10px;color:rgba(255,255,255,.25);margin-top:16px;letter-spacing:1px">Your information is 100% private and secure.</p>
     </div>`;
     return;
   }

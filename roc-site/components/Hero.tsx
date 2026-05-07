@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function Hero() {
   return (
     <section className="relative grid grid-cols-1 lg:grid-cols-2 min-h-screen bg-[#0A0A0A] pt-[70px]">
@@ -17,7 +15,7 @@ export default function Hero() {
           <span className="block text-white/70 text-[clamp(18px,2.2vw,28px)] font-bold tracking-[3px] mt-2">At The Highest Price</span>
         </h1>
         <p className="text-[13px] font-light leading-[1.9] text-white/50 max-w-[440px] mb-10" style={{ fontFamily: "'Montserrat', sans-serif" }}>
-          We buy diamonds, gold, designer jewelry & estate collections.<br />
+          We buy diamonds, gold, designer jewelry &amp; estate collections.<br />
           <strong className="text-white font-semibold">Instant payment. 100% confidential.</strong>
         </p>
         <div className="flex flex-wrap gap-4 mb-12">
@@ -42,10 +40,18 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* RIGHT — real image */}
-      <div className="relative overflow-hidden min-h-[320px] lg:min-h-full order-first lg:order-last">
-        <Image src="/adsasdw.png" alt="Fine jewelry collection" fill className="object-cover" priority />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0A] via-[#0A0A0A]/20 to-transparent lg:bg-gradient-to-r" />
+      {/* RIGHT — video hero */}
+      <div className="relative overflow-hidden min-h-[300px] lg:min-h-full order-first lg:order-last">
+        <video
+          autoPlay muted loop playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/hero.mp4" type="video/mp4" />
+        </video>
+        {/* gradient overlay left side */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0A] via-[#0A0A0A]/30 to-transparent lg:block hidden" />
+        {/* gradient overlay bottom for mobile */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent lg:hidden" />
       </div>
     </section>
   );
